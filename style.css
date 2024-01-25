@@ -1,0 +1,298 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.gallows-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallow-block {
+    flex: 1;
+    min-width: 400px;
+    position: relative;
+}
+
+.person {
+    position: absolute;
+}
+
+.head {
+    top: 149px;
+    left: 252px;
+}
+
+.body {
+    top: 249px;
+    left: 300px;
+}
+
+
+.hand-one {
+    top: 375px;
+    left: 236px;
+}
+
+.hand-two {
+    top: 375px;
+    left: 300px;
+}
+
+
+.leg-one {
+    bottom: 225px;
+    left: 237px;
+}
+
+.leg-two {
+    bottom: 225px;
+    left: 300px;
+}
+
+.hide-image {
+    display: none;
+}
+
+
+
+
+/* ------------------------------------------ */
+
+
+.information-block {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.information-block__word-wrapper {
+    display: flex;
+    gap: 20px;
+    height: 70px;
+}
+
+.information-block__word {
+    font-size: 60px;
+    position: relative;
+    min-width: 40px;
+}
+
+.information-block__word.hide span {
+    display: none;
+}
+
+.information-block__word.hide:after {
+    content: "_";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+}
+
+.information-block__hint {
+    max-width: 90%;
+    font-size: 25px;
+    text-align: center;
+}
+
+.information-block_count {
+    font-size: 40px;
+}
+
+.information-block__keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+}
+
+.virtual-key {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 15px 23px;
+    width: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.virtual-key:not([disabled]):hover {
+    background-color: rgb(218, 217, 217);
+    transform: translateY(-2px);
+    outline: 2px solid black;
+}
+
+.virtual-key--disabled {
+    background-color: rgb(218, 217, 217);
+    color: black;
+    font-weight: 600;
+    outline: 2px solid black;
+}
+
+.guesses {
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+}
+
+
+
+
+
+
+/* -------------------------------------------------- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+
+.modal-wrapper {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background: white;
+    width: 400px;
+    height: 200px;
+    z-index: 101;
+    box-shadow: 1px 2px 27px 0px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.modal-message {
+    text-transform: uppercase;
+}
+
+.modal-word {
+    letter-spacing: 5px;
+    border: 0.5px solid black;
+    padding: 5px;
+}
+
+.modal-button {
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal-button:hover {
+background-color: rgb(81, 81, 81);
+}
+
+
+/* ---------------------------------------------------------- */
+
+@media (min-width: 1440px) {
+    body {
+        max-width: 1440px;
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1439px) {
+    .modal-wrapper {
+        width: 25%;
+        height: 25%;
+    }
+}
+
+
+
+@media (min-width:300px) and (max-width: 767px) {
+    .gallows-wrapper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallow-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 200px;
+        position: relative;
+    }
+
+    .information-block__word {
+        font-size: 30px;
+        position: relative;
+        min-width: 25px;
+    }
+
+    .information-block__word-wrapper {
+        display: flex;
+        gap: 20px;
+        height: 40px;
+    }
+
+
+    .information-block__hint {
+        font-size: 15px;
+    }
+
+    .information-block_count {
+        font-size: 40px;
+    }
+
+    .virtual-key {
+        padding: 10px;
+        width: 36px;
+    }
+
+    .guesses {
+        font-size: 20px;
+    }
+
+    .modal-wrapper {
+        width: 70%;
+        height: 25%;
+    }
+}
